@@ -1,5 +1,6 @@
 from numpy import *
 import operator
+import os
 
 
 # 创建数据集
@@ -88,3 +89,42 @@ def datingClassTest():
         if (classifierResult != datingLabels[i]): errorCount += 1.0
     print("the total error rate is: %f"% (errorCount/float(numTestVecs)))
 
+
+# 为了使用classify代码, 32*32的矩阵转换为 1 * 1024的矩阵
+def image2vector(filename):
+    returnVec = zeros((1, 1024))
+    fr = open(filename)
+    for i in range(32):
+        lineStr = fr.readline()
+        for j in range(32):
+            returnVec[0, 32*i+j] = lineStr[j]
+    return returnVec
+
+
+def handWritingClassTest():
+    hwLabels = []
+    trainingFileList = os.listdir('trainingDigits')
+    m = len(trainingFileList)
+    trainingMat = zeros((m, 1024))
+    for i in range(m):
+        fileNameStr = trainingFileList[i]
+        fileStr = fileNameStr.split('.')[0]
+        classNumStr = int(fileStr.split('_')[0])
+        hwLabels.append(classNumStr)
+        trainingMat[i,:] = image2vector('trainingDigits/%s' % fileNameStr)
+    testFileList = os.listdir('testDigits')
+    errorCount = 0.0
+    mTest = len(testFileList)
+    for i in range(mTest):
+        fileNameStr = testFileList[i]
+        fileStr = fileNameStr.split('.')[0]
+        classNumStr = int(fileStr.split('_')[0])
+        vectorUnderTest = image2vector('testDigits/%s' % fileNameStr)
+        classifierResult = classify0(vectorUnderTest, \
+                                     trainingMat, hwLabels, 3)
+        print("the classifier came back with: %d, the real answer is %d"\
+              % (classifierResult, classNumStr))
+        if (classifierResult != classNumStr):
+            errorCount += 1.0
+    print("\nthe total number of errors is: %d" % errorCount)
+    print("\nthe total error rate is: %f" % (errorCount/float(mTest)))
