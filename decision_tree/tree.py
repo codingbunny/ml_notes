@@ -38,9 +38,10 @@ def splitDataSet(dataSet, axis, value):
             retDataSet.append(reducedFeatVec)
     return retDataSet
 
-
+#对于信息熵和增益这里没看懂
 def chooseBestFeatureToSplit(dataSet):
     numFeatures = len(dataSet[0]) - 1
+    # base信息熵
     baseEntropy = calcShannonEnt(dataSet)
     bestInfoGain = 0.0
     bestFeature = -1
@@ -72,11 +73,15 @@ def majorityCnt(classList):
 
 def createTree(dataSet, labels):
     classList = [example[-1] for example in dataSet]
+    # 看是否只有一类, 即list中的值是否完全相同
     if classList.count(classList[0]) == len(classList):
         return classList[0]
+    # dataset中是否只剩一个特征，使用完了所有的特征？？
     if len(dataSet[0]) == 1:
+        # 出现最多的类别作为返回值
         return majorityCnt(classList)
     bestFeat = chooseBestFeatureToSplit(dataSet)
+    print(bestFeat)
     bestFeatLabel = labels[bestFeat]
     myTree = {bestFeatLabel: {}}
     del(labels[bestFeat])
@@ -85,5 +90,5 @@ def createTree(dataSet, labels):
     for value in uniqueVals:
         subLabels = labels[:]
         myTree[bestFeatLabel][value] = createTree(splitDataSet\
-                                                      ((dataSet, bestFeat, value), subLabels))
+                                                      (dataSet, bestFeat, value), subLabels)
     return myTree
