@@ -6,6 +6,7 @@ arrow_args = dict(arrowstyle="<-")
 
 
 def getNumLeafs(myTree):
+    print(myTree)
     numLeafs = 0
     firstStr = list(myTree.keys())[0]
     secondDict = myTree[firstStr]

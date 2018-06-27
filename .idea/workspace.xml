@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e9c83ef4-432b-4a96-a04e-ddcdbeb6b8ad" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/decision_tree/tree.py" beforeDir="false" afterPath="$PROJECT_DIR$/decision_tree/tree.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/decision_tree/treePlotter.py" beforeDir="false" afterPath="$PROJECT_DIR$/decision_tree/treePlotter.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -12,12 +14,21 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="treePlotter.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/decision_tree/treePlotter.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="796">
-              <caret line="84" column="55" lean-forward="true" selection-start-line="84" selection-start-column="55" selection-end-line="84" selection-end-column="55" />
+            <state relative-caret-position="120">
+              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="tree.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/decision_tree/tree.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1740">
+              <caret line="117" column="17" lean-forward="true" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
             </state>
           </provider>
         </entry>
@@ -140,9 +151,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="242" y="-1039" width="1227" height="804" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.28772804" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.28772804" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
       <window_info anchor="bottom" id="Run" order="2" />
@@ -166,6 +176,20 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/decision_tree/treePlotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="84" column="55" selection-start-line="84" selection-start-column="55" selection-end-line="84" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/decision_tree/treePlotter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1260">
+          <caret line="84" column="55" lean-forward="true" selection-start-line="84" selection-start-column="55" selection-end-line="84" selection-end-column="55" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/kNN/kNN.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1410">
@@ -234,15 +258,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/decision_tree/tree.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="92" column="35" lean-forward="true" selection-start-line="92" selection-start-column="35" selection-end-line="92" selection-end-column="35" />
+        <state relative-caret-position="1740">
+          <caret line="117" column="17" lean-forward="true" selection-start-line="117" selection-start-column="17" selection-end-line="117" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/decision_tree/treePlotter.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="796">
-          <caret line="84" column="55" lean-forward="true" selection-start-line="84" selection-start-column="55" selection-end-line="84" selection-end-column="55" />
+        <state relative-caret-position="120">
+          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
         </state>
       </provider>
     </entry>
