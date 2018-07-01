@@ -6,13 +6,12 @@ arrow_args = dict(arrowstyle="<-")
 
 
 def getNumLeafs(myTree):
-    print(myTree)
     numLeafs = 0
     firstStr = list(myTree.keys())[0]
     secondDict = myTree[firstStr]
     for key in secondDict.keys():
         if type(secondDict[key]).__name__ == 'dict':
-            numLeafs += 1 + getTreeDepth(secondDict[key])
+            numLeafs += getNumLeafs(secondDict[key])
         else:
             numLeafs += 1
     return numLeafs
@@ -58,7 +57,7 @@ def plotTree(myTree, parentPt, nodeTxt):
     secondDict = myTree[firstStr]
     plotTree.yOff = plotTree.yOff - 1.0/plotTree.totalD
     for key in secondDict.keys():
-        if type(secondDict).__name__ == 'dict':
+        if type(secondDict[key]).__name__ == 'dict':
             plotTree(secondDict[key], cntrPt, str(key))
         else:
             plotTree.xOff = plotTree.xOff + 1.0/plotTree.totalW
@@ -73,8 +72,11 @@ def createPlot(inTree):
     fig.clf()
     axprops = dict(xticks=[], yticks=[])
     createPlot.ax1 = plt.subplot(111, frameon=False, **axprops)
+    # 终止点Leaf node储存在totalW
     plotTree.totalW = float(getNumLeafs(inTree))
+    # 树的深度储存在totalD
     plotTree.totalD = float(getTreeDepth(inTree))
+    # x轴有效范围是0-1， y轴有效范围也是0-1
     plotTree.xOff = -0.5/plotTree.totalW
     plotTree.yOff = 1.0
     plotTree(inTree, (0.5, 1.0), '')
